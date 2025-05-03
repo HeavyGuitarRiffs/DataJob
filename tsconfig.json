@@ -1,0 +1,44 @@
+{
+  "compilerOptions": {
+    "types": ["node"],
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "auth": ["./app/auth"] 
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "typeRoots": ["./types", "./node_modules/@types"]
+  },
+  "include": [
+    "next-env.d.ts",
+    "app/types",
+    "app/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "types/next-auth.d.ts", // Ensure this exists and includes the jwt module type
+    "lib",
+    "global.d.ts",
+    "node_modules/next-auth/**/*", // This line ensures all types inside next-auth are picked up
+    "middleware.ts"
+  ],
+  "exclude": ["node_modules"]
+}
